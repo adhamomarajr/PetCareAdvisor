@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Care Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f8ff;
+            color: #333;
+            transition: background-color 0.5s;
+        }
+        header {
+            background-color: #ffcc00;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease;
+        }
+        h1 {
+            color: #3b3b3b;
+        }
+        .pet-type {
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #ffcc00;
+            margin: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            animation: fadeIn 0.5s ease;
+        }
+        .pet-type:hover {
+            transform: scale(1.1);
+        }
+        .pet-info {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            animation: slideIn 1s ease;
+        }
+        .pet-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 800px;
+            margin: auto;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffcc00;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+    <script>
+        function toggleInfo(pet) {
+            const info = document.getElementById(pet + '-info');
+            if (info.style.display === 'block') {
+                info.style.display = 'none';
+            } else {
+                info.style.display = 'block';
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Pet Care Information</h1>
+    </header>
+
+    <div class="pet-container">
+        <div class="pet-type" onclick="toggleInfo('dog')">Dogs</div>
+        <div class="pet-type" onclick="toggleInfo('cat')">Cats</div>
+        <div class="pet-type" onclick="toggleInfo('fish')">Fish</div>
+        <div class="pet-type" onclick="toggleInfo('bird')">Birds</div>
+        <div class="pet-type" onclick="toggleInfo('reptile')">Reptiles</div>
+    </div>
+
+    <section>
+        <p id="dog-info" class="pet-info">
+            Dogs are loyal companions that require regular exercise, a balanced diet, and social interaction. Make sure to provide them with adequate space to play and mental stimulation to keep them happy.
+            <a href="DogCareMoreInfo.html">View More Information</a>
+        </p>
+        <p id="cat-info" class="pet-info">
+            Cats are independent creatures that enjoy a cozy environment. They need regular feeding, litter box maintenance, and playtime to keep them active and engaged.
+            <a href="CatCareMoreInfo.html">View More Information</a>
+        </p>
+        <p id="fish-info" class="pet-info">
+            Fish require a clean tank with proper filtration, appropriate water temperature, and regular feeding. Each species has specific needs, so research is essential for their care.
+            <a href="FishCareMoreInfo.html">View More Information</a>
+        </p>
+        <p id="bird-info" class="pet-info">
+            Birds need spacious cages, regular social interaction, and a varied diet that includes seeds, fruits, and vegetables. It's important to provide them with toys and mental stimulation.
+            <a href="BirdCareMoreInfo.html">View More Information</a>
+        </p>
+        <p id="reptile-info" class="pet-info">
+            Reptiles require specific habitat conditions, including temperature and humidity control. They also need a proper diet, which can vary significantly between species.
+            <a href="ReptileCareMoreInfo.html">View More Information</a>
+        </p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Pet Care Advisor. All rights reserved.</p>
+    </footer>
+</body>
+</html>
